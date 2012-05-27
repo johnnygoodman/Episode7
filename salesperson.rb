@@ -12,34 +12,34 @@ end
 Benchmark.bm do |x|
   x.report do 
     salesperson = SalesPerson.new(Place.build("Houston, TX"))
-    texas_cities.take(1).each do |city|
+    texas_cities.shuffle.take(1).each do |city|
       salesperson.schedule_city(Place.build(city))
     end
-    puts "Destinations: #{salesperson.cities} \n Route: #{salesperson.route} \n\n" 
+    salesperson.route
   end
   
   x.report do 
     salesperson = SalesPerson.new(Place.build("Houston, TX"))
-    texas_cities.take(9).each do |city|
+    texas_cities.shuffle.take(9).each do |city|
       salesperson.schedule_city(Place.build(city))
     end
-    puts "Destinations: #{salesperson.cities} \n Route: #{salesperson.route} \n\n" 
+    salesperson.route
   end
     
   x.report do 
     salesperson = SalesPerson.new(Place.build("Houston, TX"))
-    texas_cities.take(49).each do |city|
+    texas_cities.shuffle.take(49).each do |city|
       salesperson.schedule_city(Place.build(city))
     end
-    puts "Destinations: #{salesperson.cities} \n Route: #{salesperson.route} \n\n" 
+    salesperson.route
   end
   
   x.report do 
     salesperson = SalesPerson.new(Place.build("Houston, TX"))
-    texas_cities.take(199).each do |city|
+    texas_cities.shuffle.take(199).each do |city|
       salesperson.schedule_city(Place.build(city))
     end
-    puts "Destinations: #{salesperson.cities} \n Route: #{salesperson.route} \n\n" 
+    salesperson.route
   end
       
 end

@@ -5,6 +5,10 @@ describe SalesPerson do
 
   subject = SalesPerson.new("Houston, TX")
   
+  it "should have a defined starting point" do
+    subject.cities[0].should eq("Houston, TX")
+  end
+  
 	it "should have many cities" do
 		city = stub
 		subject.schedule_city(city)
