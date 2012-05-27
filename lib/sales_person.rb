@@ -8,7 +8,7 @@ class SalesPerson
 	end
 
 	def schedule_city(city)
-    @cities << city unless @starting_point.to_s == city.to_s
+    @cities << city unless @starting_point.to_s == city.to_s || @cities.include?(city)
 	end
 
 	def route

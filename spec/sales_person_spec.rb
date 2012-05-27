@@ -2,6 +2,9 @@ require_relative "../lib/sales_person"
 require_relative "../lib/calculates_route"
 
 describe SalesPerson do
+
+  subject = SalesPerson.new("Houston, TX")
+  
 	it "should have many cities" do
 		city = stub
 		subject.schedule_city(city)
