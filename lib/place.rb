@@ -18,4 +18,5 @@ class Place
 	def to_coordinates
 		coordinates
 	end
+	
 end
