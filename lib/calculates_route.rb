@@ -1,7 +1,6 @@
 class CalculatesRoute
 
 	def self.calculate(points)
-
 		remaining_points = points
 		route = []
 		route << remaining_points.slice!(0)

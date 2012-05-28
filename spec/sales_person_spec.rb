@@ -1,12 +1,18 @@
 require_relative "../lib/sales_person"
 require_relative "../lib/calculates_route"
+require_relative "../lib/place"
 
 describe SalesPerson do
 
-  subject = SalesPerson.new("Houston, TX")
+  subject = SalesPerson.new(Place.build("Houston, TX"))
   
+  it "salesperson should log the total miles" do
+    salesperson = SalesPerson.new(Place.build("Houston, TX"))
+    salesperson.log_route_distance(salesperson.route).should eq(salesperson.total_miles)
+  end  
+    
   it "should have a defined starting point" do
-    subject.cities[0].should eq("Houston, TX")
+    subject.cities[0].to_s.should eq(Place.build("Houston, TX").to_s)
   end
   
 	it "should have many cities" do
