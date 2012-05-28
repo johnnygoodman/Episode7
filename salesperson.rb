@@ -15,8 +15,9 @@ texas_cities.shuffle.take(5).each do |city|
   salesperson.schedule_city(Place.build(city))
 end
 
-salesperson.log_route_distance(salesperson.route)
-puts "Total travel time in hours assuming 55 mph: #{salesperson.total_miles / 55}"
+route = salesperson.route
+salesperson.log_route_distance(route)
+puts "Total travel time in hours assuming 55 mph: #{salesperson.total_miles / 55} for cities: #{route.inspect}"
 
 
 Benchmark.bm do |x|
